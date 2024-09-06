@@ -3,6 +3,7 @@ package com.example.shambambukli
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -38,10 +39,11 @@ import androidx.compose.ui.unit.sp
 
 
 class MainActivity : ComponentActivity() {
+    private val viewModel: CellViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MainScreen(viewModel = CellViewModel())
+            MainScreen(viewModel = viewModel)
         }
     }
 }
